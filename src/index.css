@@ -1,0 +1,70 @@
+:root {
+  --rojo: #d6312a;
+  --rojo-suave: #fdecee;
+  --texto: #1f2430;
+  --mute: #646b7d;
+  --borde: #e2e5ec;
+  --fondo: #f6f7fb;
+  --verde: #1f8a4c;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--texto);
+  background: var(--fondo);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.6; }
+
+/* ── Layout: cabecera + contenido + pie ─────────────────────────────────── */
+.cabecera { background: var(--rojo); color: white; }
+.cabecera-interior { max-width: 900px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; text-decoration: none; }
+.logo img { width: 28px; height: 28px; }
+.nav { display: flex; gap: 6px; }
+.nav a { color: white; text-decoration: none; padding: 6px 14px; border-radius: 999px; font-weight: 600; }
+.nav a:hover { background: rgba(255, 255, 255, 0.15); }
+/* NavLink le pone la clase "active" al link de la ruta actual */
+.nav a.active { background: white; color: var(--rojo); }
+
+.contenido { max-width: 900px; margin: 0 auto; padding: 32px 20px 60px; display: grid; gap: 20px; }
+.pie { text-align: center; color: var(--mute); font-size: 13px; padding: 0 20px 24px; }
+
+/* ── Inicio ─────────────────────────────────────────────────────────────── */
+.titulo { font-size: 32px; color: var(--rojo); }
+.subtitulo { color: var(--mute); }
+.grilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.tarjeta { display: grid; justify-items: center; gap: 6px; padding: 16px 12px; background: white; border: 1px solid var(--borde); border-radius: 16px; text-align: center; }
+.tarjeta img { width: 120px; height: 120px; object-fit: contain; }
+.tipo { font-size: 13px; color: var(--mute); text-transform: capitalize; }
+.boton { display: inline-block; justify-self: start; background: var(--rojo); color: white; border: 0; padding: 12px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; }
+
+/* ── Formulario ─────────────────────────────────────────────────────────── */
+.formulario { display: grid; gap: 18px; background: white; border: 1px solid var(--borde); border-radius: 18px; padding: 24px; }
+.campo { display: grid; gap: 6px; }
+.campo > label, .campo > legend { font-weight: 600; }
+.campo input[type='text'], .campo input[type='email'], .campo input[type='number'] { font: inherit; padding: 10px 12px; border: 1px solid var(--borde); border-radius: 10px; }
+.campo input:focus { outline: 2px solid var(--rojo); outline-offset: 1px; }
+fieldset.campo { border: 0; padding: 0; margin: 0; }
+.opciones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.opcion { display: grid; justify-items: center; gap: 4px; padding: 10px; border: 2px solid var(--borde); border-radius: 14px; cursor: pointer; text-transform: capitalize; }
+.opcion img { width: 72px; height: 72px; }
+.opcion input { margin: 0; }
+.opcion:has(input:checked) { border-color: var(--rojo); background: var(--rojo-suave); }
+.check { display: flex; align-items: center; gap: 8px; font-weight: 400; }
+.error-campo { color: #a01c2c; font-size: 14px; }
+.error-envio { color: #a01c2c; background: var(--rojo-suave); padding: 10px 14px; border-radius: 10px; }
+.vista-previa { display: flex; align-items: center; gap: 10px; color: var(--mute); }
+.vista-previa img { width: 48px; height: 48px; }
+
+/* ── Bienvenida ─────────────────────────────────────────────────────────── */
+.carnet { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 20px; background: white; border: 3px solid var(--rojo); border-radius: 20px; padding: 24px; }
+.carnet img { width: 140px; height: 140px; }
+.carnet .numero { color: var(--mute); font-weight: 700; }
+.carnet h2 { font-size: 26px; }
+
+/* ── 404 ────────────────────────────────────────────────────────────────── */
+.no-encontrada { text-align: center; display: grid; justify-items: center; gap: 12px; padding: 40px 0; }
+.no-encontrada img { width: 160px; height: 160px; }
+.no-encontrada .boton { justify-self: center; }
